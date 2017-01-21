@@ -1,0 +1,10 @@
+# Gulp
+/node_modules
+/src/vendor
+
+# Miscellaneous
+.DS_Store
+**/.DS_Store
+statistics
+logs
+Thumbs.db
