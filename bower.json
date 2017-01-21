@@ -1,0 +1,27 @@
+{
+  "name": "gulp-bower-setup",
+  "version": "1.0.1",
+  "authors": [
+    "Stewart Doxey <hello@stewartdoxey.co.uk>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor",
+    "test",
+    "tests"
+  ],
+  "overrides": [
+    "jquery"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "components-font-awesome": "~4.4.0",
+    "jquery": "1.11.*",
+    "dropzone": "4.3.*",
+    "slick-carousel": "^1.6.0"
+  }
+}
