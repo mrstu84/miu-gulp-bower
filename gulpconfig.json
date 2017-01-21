@@ -1,0 +1,32 @@
+{
+	"styles": {
+		"site": [{
+			"src": "./src/scss/Site/styles.scss",
+			"dest": {
+				"paths": [
+					"./app/webroot/css"
+				],
+				"filename": "site.min.css"
+			},
+			"watch": [
+				"./src/scss/Site/**/*.scss",
+				"./src/scss/Site/*.scss"
+			]
+		}]
+	},
+	"scripts": {
+		"site": [{
+			"name": "site.js",
+			"src": "./src/js/Site/**/*.js",
+			"dest": {
+				"paths": [
+					"./app/webroot/js"
+				],
+				"filename": "site.min.js"
+			},
+			"watch": [
+				"./src/js/Site/**/*"
+			]
+		}]
+	}
+}
