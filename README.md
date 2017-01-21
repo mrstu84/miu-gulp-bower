@@ -24,7 +24,7 @@ The required Gulp, Bower and Yarn can be globally installed simultaneously by ru
 
 ### Yarn
 
-A few commands are required to get your project up and running, here we will install the Gulp package dependencies outlined in the `package.json` file using Yarn. Execute the following command in the root directory of your project, where the `package.json` file can be located.
+A few commands are required to get your project up and running, here we will install the Gulp package dependencies outlined in the `packages.json` file using Yarn. Execute the following command in the root directory of your project, where the `packages.json` file can be located.
 
 	yarn install
 	
