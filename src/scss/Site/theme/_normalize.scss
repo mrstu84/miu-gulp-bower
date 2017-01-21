@@ -1,0 +1,19 @@
+//
+// Normalize
+// ----------------------------------------------
+
+// Without this, select has cursor: default; d'oh!
+select { cursor: pointer; }
+
+// iOS devices do silly things that override input styles
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=search] {
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+
+	border-radius: $input-border-radius;
+}

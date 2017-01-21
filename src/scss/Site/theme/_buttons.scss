@@ -1,0 +1,28 @@
+//
+// Buttons
+// ----------------------------------------------
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-lg {
+  // line-height: ensure even-numbered height of button next to large input
+  @include button-size(12px, $padding-large-horizontal, $font-size-base, 1.4, $btn-border-radius-large);
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-secondary {
+	@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+
+.btn-facebook {
+
+	@include button-variant($btn-facebook-color, $btn-facebook-bg, $btn-facebook-border);
+
+	span {
+		margin-right: 10px;
+	}
+}
