@@ -9,8 +9,8 @@
 $brand-primary:			#1ABC9C !default;
 $brand-secondary:		#404040 !default;
 
-$brand-featured:		#F5A623 !default;
 $brand-facebook:		#3b5998 !default;
+$brand-twitter:         #4099FF !default;
 
 $black:					#000 !default;
 $white: 				#fff !default;
@@ -28,7 +28,7 @@ $text-color:            #404040 !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  'Montserrat', sans-serif !default;
+$font-family-sans-serif:  sans-serif !default;
 
 $font-size-base:          16px !default;
 $font-size-large:         ceil(($font-size-base * 1.125)) !default; // ~18px
