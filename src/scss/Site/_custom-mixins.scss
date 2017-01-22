@@ -1,23 +1,24 @@
-/*
- * Font size
- * Coverts the supplied pixel based font size to rem,
- * using pixel asfall back. Uses calculateRem function
- * to calculate the size in rems
+/*!
+ * IE10 viewport hack for Surface/desktop Windows 8 bug
+ * Copyright 2014-2015 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@function calculateRem($size) {
-	$remSize: $size / 10px;
-	@return #{$remSize}rem;
-}
-
-@mixin font-size($size) {
-	font-size: $size; //Fallback in px
-	font-size: calculateRem($size);
-}
 
 /*
- * Hover
- * Simple transition applied to element on hover from $original color to $hover
+ * See the Getting Started docs for more information:
+ * http://getbootstrap.com/getting-started/#support-ie10-width
  */
+@-webkit-viewport { width: device-width; }
+@-moz-viewport    { width: device-width; }
+@-ms-viewport     { width: device-width; }
+@-o-viewport      { width: device-width; }
+@viewport         { width: device-width; }
+
+//
+// Hover Transition
+// Simple transition applied to element on hover from $original color to $hover
+// ----------------------------------------------
+
 @mixin hover-transition($original, $hover) {
 	color: $original;
 
@@ -28,21 +29,26 @@
 	}
 }
 
-/*
- * Attention states, set them all in one go! (usage below)
- */
+
+//
+// Attention States
+// Assign :focus, :hover and :active in one call
+// ----------------------------------------------
+
 $attention: "&:focus, &:hover, &:active";
+
 /* Usage:
 .foo {
 	#{$attention} {
 		color: red;
 	}
 }
- */
 
-/*
- * Sprite
- */
+
+//
+// Sprite
+// ----------------------------------------------
+
 @mixin sprite($file, $posX, $posY) {
 	background-color: transparent;
 	background-image: url('../img/#{$file}');
@@ -54,33 +60,37 @@ $attention: "&:focus, &:hover, &:active";
 // Breakpoint mixins
 // ----------------------------------------------
 
-/*
- * Breakpoint specific:
- */
+// Breakpoint Specific
+// ----------------------------------------------
+
 @mixin sm {
 	@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
 		@content;
 	}
 }
+
 @mixin md {
 	@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
 		@content;
 	}
 }
+
 @mixin lg {
 	@media (min-width: $screen-lg-min) {
 		@content;
 	}
 }
 
-/*
- * Breakpoint and above:
- */
+
+// Breakpoint and Up
+// ----------------------------------------------
+
 @mixin sm-plus {
 	@media (min-width: $screen-sm-min) {
 		@content;
 	}
 }
+
 @mixin md-plus {
 	@media (min-width: $screen-md-min) {
 		@content;
@@ -90,6 +100,7 @@ $attention: "&:focus, &:hover, &:active";
 //
 // Browser-specific mixins
 // ----------------------------------------------
+
 @mixin ie8 {
 	@media \0screen { @content }
 }
@@ -111,3 +122,137 @@ $attention: "&:focus, &:hover, &:active";
 	padding-right: 0;
 	padding-left: 0;
 }
+
+//
+// Font sizing
+// -------------------------
+
+/*
+Coverts the supplied pixel based font size to rem,
+using pixel asfall back. Uses calculateRem function
+to calculate the size in rems
+*/
+
+@function calculateRem($size) {
+    $remSize: $size / 10px;
+    @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size; //Fallback in px
+    font-size: calculateRem($size);
+}
+
+
+//
+// Transitions
+// -------------------------
+
+// USAGE: @include transition(all 0.2s ease-in-out);
+
+@mixin transition($transition...) {
+    // defining prefixes so we can use them in mixins below
+    $prefixes:      ("-webkit",  "");
+    @each $prefix in $prefixes {
+        #{$prefix}-transition: $transition;
+    }
+
+  transition: $transition;
+}
+
+//
+// Grandient backgrounds
+// -------------------------
+
+// USAGE: @include css-gradient(#dfdfdf, #f8f8f8);
+
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+    background-color: $to;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+    background-image: -webkit-linear-gradient(top, $from, $to);
+    background-image: -moz-linear-gradient(top, $from, $to);
+    background-image: -o-linear-gradient(top, $from, $to);
+    background-image: linear-gradient(to bottom, $from, $to);
+}
+
+
+//
+// Text shadow
+// -------------------------
+
+@mixin text-shadow($horizontal, $vertical, $blur, $colour) {
+    -webkit-text-shadow: $horizontal $vertical $blur $colour;
+    text-shadow: $horizontal $vertical $blur $colour;
+    filter: dropshadow(color=$colour, offx=$horizontal, offy=$vertical);
+}
+
+
+//
+// Border radius
+// -------------------------
+
+@mixin border-radius($radius) {
+    -o-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.brand-border-radius,
+%brand-border-radius {
+    @include border-radius(6px);
+}
+
+
+//
+// Opacity
+// -------------------------
+
+@mixin opacity($trans) {
+    filter: alpha(opactiy=($trans * 100));
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$trans * 100})";
+    -moz-opacity: $trans;
+    -khtml-opacity: $trans;
+    opacity: $trans;
+}
+
+
+//
+// Retina images
+// -------------------------
+
+$is-hidpi: "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx)";
+
+@mixin background-size($width, $height) {
+    -webkit-background-size: $width $height;
+    -moz-background-size: $width $height;
+    background-size: $width $height;
+}
+
+$sprite-main-width: 140px;
+$sprite-main-height: auto;
+
+@mixin sprite-retina($file, $type, $width, $height, $xpos, $ypos) {
+    background-image: url('../img/' + $file + '.' + $type);
+    background-position: $xpos $ypos;
+    background-repeat: no-repeat;
+
+    @media #{$is-hidpi} {
+        & {
+            background-image: url('../img/' + $file + '@2x.' + $type);
+            @include background-size($sprite-main-width, $sprite-main-height);
+        }
+    }
+}
+
+
+//
+// Extendable classes
+// --------------------------------------------------
+
+.ir, %ir {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
