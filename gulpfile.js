@@ -8,12 +8,7 @@ var autoprefixerOptions = {
 };
 
 // Configure Main Bower Files (https://github.com/ck86/main-bower-files)
-var mainBowerFilesOptions = {
-	paths: {
-		bowerrrc: './',
-		bowerJson: 'bower.json'
-	}
-};
+var mainBowerFilesOptions = require('./bowerconfig.json');
 
 // assign gulp-bless options
 var blessOptions = {
@@ -71,7 +66,13 @@ function loadStyles() {
 }
 
 function buildStyles(data) {
-	var css = gulp.src(data.src)
+	// start by concatinating list of main bower assets and local app assets
+	var css = gulp.src(
+			plugins.mainBowerFiles(mainBowerFilesOptions)
+			.concat(data.src)
+		)
+		// filter to allow only css and scss based file extensions
+		.pipe(plugins.filter(['*.css', '*.scss']))
 		// init sourcemaps plugin when not for production
 		.pipe(isProduction ? gutil.noop() : plugins.sourcemaps.init())
 		// init plumber for error reporting and stop compilation

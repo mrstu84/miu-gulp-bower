@@ -1,0 +1,14 @@
+{
+    "paths": {
+        "bowerrrc": "./",
+        "bowerJson": "bower.json"
+    },
+    "overrides": {
+        "bootstrap-sass": {
+            "ignore": true
+        },
+        "components-font-awesome": {
+            "ignore": true
+        }
+    }
+}
