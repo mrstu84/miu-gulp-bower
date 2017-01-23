@@ -1,20 +1,19 @@
 //
-// Variables
+// Custom Variables
 // --------------------------------------------------
 
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$brand-primary:			#1ABC9C !default;
-$brand-secondary:		#404040 !default;
+$brand-primary: #e32170;
+$brand-secondary: #0e0d1d;
 
-$brand-facebook:		#3b5998 !default;
+$black:                 #333 !default;
+$white:                 #fff !default;
+
+$brand-facebook:        #3b5998 !default;
 $brand-twitter:         #4099FF !default;
-
-$black:					#000 !default;
-$white: 				#fff !default;
-$light-grey:			#f1f3f5 !default;
 
 //== Scaffolding
 //
@@ -23,24 +22,13 @@ $light-grey:			#f1f3f5 !default;
 //** Global text color on `<body>`.
 $text-color:            #404040 !default;
 
-
 //== Typography
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  sans-serif !default;
+$opensans:                  'Open Sans', sans-serif !default;
 
-$font-size-base:          16px !default;
-$font-size-large:         ceil(($font-size-base * 1.125)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * 0.875)) !default; // ~14px
-
-$font-size-h1:            floor(($font-size-base * 1.5)) !default; // ~24px
-$font-size-h2:            floor(($font-size-base * 1.375)) !default; // ~22px
-$font-size-h3:            ceil(($font-size-base * 1.25)) !default; // ~20px
-$font-size-h4:            ceil(($font-size-base * 1.125)) !default; // ~18px
-$font-size-h5:            $font-size-base !default;
-$font-size-h6:            ceil(($font-size-base * 0.875)) !default; // ~14px
-
+$font-family-sans-serif:    $opensans !default;
 
 //== Buttons
 //
@@ -53,38 +41,3 @@ $btn-secondary-border:             $btn-secondary-color !default;
 $btn-facebook-color:              $white !default;
 $btn-facebook-bg:                 $brand-facebook !default;
 $btn-facebook-border:             $btn-facebook-bg !default;
-
-
-//== Forms
-//
-//##
-
-//** Text color for `<input>`s
-$input-color:                    #404040 !default;
-
-//** Placeholder text color
-$input-color-placeholder:        #ccc !default;
-
-
-//== Navbar
-//
-//##
-
-$navbar-margin-bottom:                     0 !default;
-$navbar-padding-horizontal:                15px !default;
-
-// Basics of a navbar
-$navbar-default-color:                     #404040 !default;
-$navbar-default-bg:                        transparent !default;
-$navbar-default-border:                    transparent !default;
-
-// Navbar links
-$navbar-default-link-color:                #404040 !default;
-$navbar-default-link-hover-color:          #404040 !default;
-$navbar-default-link-hover-bg:             transparent !default;
-$navbar-default-link-active-color:         #404040 !default;
-$navbar-default-link-active-bg:            transparent !default;
-
-// Navbar brand label
-$navbar-default-brand-color:               #404040 !default;
-$navbar-default-brand-hover-color:         $navbar-default-brand-color !default;
