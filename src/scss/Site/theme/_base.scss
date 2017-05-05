@@ -27,7 +27,7 @@ p {
 a {
     text-decoration: none;
 
-    &:focus, &:hover {
+    #{$attention} {
         text-decoration: underline;
     }
 }
@@ -57,25 +57,19 @@ textarea {
 // Remove gutters from element
 // --------------------------------------------------
 
-.row {
+.row--gutterless {
 
-    &--gutterless {
-
-        & > [class^="col-"],
-        & > [class*=" col-"] {
-            padding-right: 0;
-            padding-left: 0;
-        }
+    & > [class^="col-"],
+    & > [class*=" col-"] {
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 
-.gutterless {
+.gutterless--left {
+    padding-left: 0;
+}
 
-    &--left {
-        padding-left: 0;
-    }
-
-    &--right {
-        padding-right: 0;
-    }
+.gutterless--right {
+    padding-right: 0;
 }
