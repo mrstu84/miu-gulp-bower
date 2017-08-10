@@ -1,6 +1,6 @@
 {
   "name": "miu-gulp-bower",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Repository to install and use Gulp and Bower locally for asset management and frontend web development",
   "main": "gulpfile.js",
   "scripts": {

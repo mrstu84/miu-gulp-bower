@@ -1,6 +1,6 @@
 {
   "name": "miu-gulp-bower",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "authors": [
     "Stewart Doxey <hi@miusu.co>"
   ],
@@ -18,8 +18,8 @@
   ],
   "devDependencies": {},
   "dependencies": {
-    "bootstrap-sass": "~3.3.7",
-    "components-font-awesome": "~4.7.0",
-    "jquery": "1.11.*"
+    "bootstrap-sass": "~3.3",
+    "components-font-awesome": "~4.7",
+    "jquery": "~3.0"
   }
 }
