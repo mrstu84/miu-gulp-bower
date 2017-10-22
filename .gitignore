@@ -1,6 +1,6 @@
 # Gulp
 /node_modules
-/src/vendor
+/src/vendor/*
 
 # Miscellaneous
 .DS_Store
